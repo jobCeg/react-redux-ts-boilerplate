@@ -63,7 +63,6 @@ const Wrapper = styled.div`
       }
 
       &::after {
-        display: none;
         content: '';
         position: absolute;
         display: inline-block;
@@ -82,15 +81,15 @@ const Wrapper = styled.div`
       }
     }
 
-    &:disabled {
+    &:checked {
       + label {
-        opacity: 0.6;
-        cursor: auto;
+        &::before {
+          background-color: ${p => p.theme.primary};
+          border-color: ${p => p.theme.primary};
+        }
 
-        &:hover {
-          &::before {
-            border-color: ${p => p.theme.border};
-          }
+        &::after {
+          display: inline-block;
         }
       }
     }
@@ -108,15 +107,15 @@ const Wrapper = styled.div`
       }
     }
 
-    &:checked {
+    &:disabled {
       + label {
-        &::before {
-          background-color: ${p => p.theme.primary};
-          border-color: ${p => p.theme.primary};
-        }
+        opacity: 0.6;
+        cursor: auto;
 
-        &::after {
-          display: inline-block;
+        &:hover {
+          &::before {
+            border-color: ${p => p.theme.border};
+          }
         }
       }
     }

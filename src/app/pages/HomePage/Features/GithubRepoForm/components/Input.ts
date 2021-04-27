@@ -9,7 +9,6 @@ export const Input = styled.input`
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: ${p => p.theme.text};
   background-color: ${p => p.theme.background};
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   outline: none;
