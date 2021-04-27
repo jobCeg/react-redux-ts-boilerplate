@@ -26,7 +26,7 @@
     "eslint-plugin-prettier": "3.4.0",
     "eslint-plugin-react-hooks": "4.2.0",
     "fontfaceobserver": "2.1.0",
-    "husky": "4.2.5",
+    "husky": "6.0.0",
     "i18next": "20.2.2",
     "i18next-browser-languagedetector": "6.1.0",
     "i18next-scanner": "3.0.0",
@@ -78,7 +78,8 @@
     "generate": "cross-env TS_NODE_PROJECT='./internals/ts-node.tsconfig.json' plop --plopfile internals/generators/plopfile.ts",
     "cleanAndSetup": "ts-node --project=./internals/ts-node.tsconfig.json ./internals/scripts/clean.ts",
     "prettify": "prettier --write",
-    "extract-messages": "i18next-scanner --config=internals/extractMessages/i18next-scanner.config.js"
+    "extract-messages": "i18next-scanner --config=internals/extractMessages/i18next-scanner.config.js",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -110,11 +111,6 @@
     "*.{md,json}": [
       "prettier --write"
     ]
-  },
-  "husky(remove-everything-in-these-parentheses.See-the-issue-#29)": {
-    "hooks": {
-      "pre-commit": "yarn run checkTs && lint-staged"
-    }
   },
   "jest": {
     "collectCoverageFrom": [
